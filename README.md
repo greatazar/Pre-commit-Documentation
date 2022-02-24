@@ -1,2 +1,2 @@
 # Documentation for pre-commit
-This is a simple documentaion of pre-commit tool.
+This is a simple documentation of the pre-commit tool.
