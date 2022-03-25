@@ -110,25 +110,40 @@
                 <div class="col-md-3">
                     <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
                         <ul class="nav">
+                            <li><a href="#line0">Introduction</a></li>
                             <li><a href="#line1">Installation</a>
                                 <ul class="nav">
-                                    <li><a href="#line1_1">Virtual Environment</a></li>
-                                    <li><a href="#line1_2">Pre-Commit</a></li>
+                                    <li><a href="#line1_1">Python</a>
+                                        <ul class="inner_nav">
+                                            <li><a href="#line1_1_1">Requirements</a></li>
+                                            <li><a href="#line1_1_2">Setup Virtual Environment</a></li>
+                                            <li><a href="#line1_1_3">Install Pre-Commit</a></li>
+                                            <li><a href="#line1_1_4">Setting up Pre-commit</a></li>
+                                            <li><a href="#line1_1_5">Install the git hook scripts</a></li>
+                                            <li><a href="#line1_1_6">Example</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li><a href="#line1_2">PHP</a>
+                                        <ul class="inner_nav">
+                                            <li><a href="#line1_2_1">Requirements</a></li>
+                                            <li><a href="#line1_2_2">Install Pre-Commit</a></li>
+                                            <li><a href="#line1_2_3">Install PHP git hook package</a></li>
+                                            <li><a href="#line1_2_4">Setting up Pre-commit</a></li>
+                                            <li><a href="#line1_2_5">Install the git hook scripts</a></li>
+                                            <li><a href="#line1_2_6">Example</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
+                            <li><a href="#line2">Note</a></li>
                             </li>
-                            <li><a href="#line2">Setting up Pre-commit</a>
-                                <ul class="nav">
-                                    <li><a href="#line2_1">For Python</a></li>
-                                    <li><a href="#line2_2">Install the git hook scripts</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#line3">Example</a></li>
+                
                             
                         </ul>
                     </nav >
                 </div>
                 <div class="col-md-9">
-                    <section class="welcome">
+                    <section class="welcome" id="line0">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
@@ -141,12 +156,7 @@
                                             For more info <a href="https://pre-commit.com/index.html" target="_blank">Click here</a>
                                             </p>
 
-                                            <h4>Requirements</h4>
-                                            <p>You will need the following sofwares to use this tool.</p>
-                                            <ol>
-                                                <li>Python above 3.5</li>
-                                                <li>GIT</li>
-                                            </ol>
+                                            
                                         </div>
                                     </div>
 
@@ -165,10 +175,23 @@
                             <!-- end col -->
                         </div>
                         <!-- end row -->
-
                         <div class="row">
                             <div class="col-md-12" id="line1_1">
-                                <h4 >Virtual Environment</h4>
+                                <h4 class="dark-text" id="line1_1">Python <hr></h4>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" id="line1_1_1">
+                                <h4 id="line1_1_1">Requirements</h4>
+                                <p>You will need the following sofwares to use this tool.</p>
+                                <ol>
+                                    <li>Python > 3.5</li>
+                                    <li>GIT</li>
+                                </ol>
+                            </div>
+                            <div class="col-md-12" id="line1_1_2">
+                                <h4 >Setup Virtual Environment</h4>
                                 <p>Before starting a project, we should create a virtual environment for that project. To create a virtual environment, we need to install the below package.</p>
                                 <pre>$ pip install virtualenv</pre>
                                 OR
@@ -193,8 +216,8 @@
                                 <strong>For Windows</strong>
                                 <pre>$ env\Scripts\activate</pre>
                             </div>
-                            <div class="col-md-12"  id="line1_2">
-                                <h4>Pre-Commit</h4>
+                            <div class="col-md-12"  id="line1_1_3">
+                                <h4>Install Pre-Commit</h4>
                                 <p>Before you can run hooks, you need to have the pre-commit package manager installed.</p>
                                 <strong>Using pip:</strong>
 
@@ -211,22 +234,9 @@
                         </div>
                         <!-- end row -->
 
-                    </section>
-                    <!-- end section -->
-
-                    <section id="line2" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Setting up Pre-commit <hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
+                        <div class="row" id="line1_1_4">
                             <div class="col-md-12" >
-                                <h4 id="line2_1">For Python</h4>
+                                <h4 id="line2_1">Setting up Pre-commit</h4>
                                 <p>create a file named <code>.pre-commit-config.yaml</code> in the project root </p>
                                 <p>Copy the below configuration and paste it into your yaml file. This configuration has been tested with python 3.6, 3.7, and 3.8. We can upgrade or downgrade any hooks by changing the <strong>rev:</strong> attribute in the YAML file. But that hook version should compatible with your python version.</ul>
                                 <pre>
@@ -278,7 +288,9 @@ repos:
       --enable= C0115, --enable=W0107, --enable=E1101, --enable=C0114]
                                     </pre>
                             </div>
+                        </div>
 
+                        <div class="row" id="line1_1_5">
                             <div class="col-md-12" id="line2_2">
                                 <h4>Install the git hook scripts</h4>
                                 <p>Run the below command to set up the git hook scripts</p>
@@ -287,21 +299,14 @@ repos:
                             </div>
                         </div>
 
-                    </section>
-                    <!-- end section -->
+                    
+                        <div class="row" id="line1_1_6">
+                            <div class="col-md-12" id="line2_2">
+                            <h4>Example</h4>
+                            
 
-                    <section id="line3" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Example <hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <p>Let us take the below python code for example.</p>
-                        <pre class="brush: html; highlight: [1,2,3,4,5,6,7,11,12,19,27,41,60.61,62,63,64]">
+                            <p>Let us take the below python code for example.</p>
+                            <pre class="brush: html; highlight: [1,2,3,4,5,6,7,11,12,19,27,41,60.61,62,63,64]">
                             
 
 
@@ -470,7 +475,265 @@ $ git commit sample.py -m "test pre commit tool"
                         <p>If you want to fix some issues and check with the pre-commit tool, we can run the below command.</p>
 
                         <pre>$ pre-commit run --files sample.py</pre>
+                        </div>
+                    </div>
 
+                    <!-- end row -->
+                    <div class="row">
+                        <div class="col-md-12" id="line1_2">
+                            <h4 class="dark-text" id="line1_1">PHP <hr></h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12" id="line1_2_1">
+                            <h4 id="line1_1_1">Requirements</h4>
+                            <p>You will need the following sofwares to use this tool.</p>
+                            <ol>
+                                <li>Python > 3.5</li>
+                                <li>PHP >= 7.3</li>
+                                <li>Composer</li>
+                                <li>GIT</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12"  id="line1_2_2">
+                            <h4>Install Pre-Commit</h4>
+                            <p>Before installing the pre-commit tool you should have installed python > 3.5 in your system. Run the below command in your terminal.</p>
+                            <strong>Using pip:</strong>
+
+                            <pre>pip install pre-commit</pre>
+
+                            <p>OR</p>
+
+                            <pre>pip3 install pre-commit</pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12"  id="line1_2_3">
+                            <h4>Install PHP git hook package</h4>
+                            <p>Before installing the PHP git hook package you should have installed the composer in your system. Run the below commands in your terminal. These packages will be added to your composer.json file. And those packages are available in your vendor folder.</p>
+                            <strong>Using Composer:</strong>
+                            <pre>$ composer require --dev "squizlabs/php_codesniffer=*"
+$ composer require --dev friendsofphp/php-cs-fixer
+$ composer require --dev phpstan/phpstan</pre>
+                        </div>
+                    </div>
+
+                    <div class="row" id="line1_2_4">
+                        <div class="col-md-12" >
+                            <h4 id="line2_1">Setting up Pre-commit</h4>
+                            <p>create a file named <code>.pre-commit-config.yaml</code> in the project root </p>
+                            <p>Copy the below configuration and paste it into your yaml file. We can upgrade or downgrade any hooks by changing the <strong>rev:</strong> attribute in the YAML file.</ul>
+                            <pre>exclude: 'docs|node_modules|migrations|.git|.tox'
+
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+    - id: check-added-large-files
+    - id: end-of-file-fixer
+    - id: check-yaml
+- repo: https://github.com/digitalpulp/pre-commit-php.git
+    rev: 1.4.0
+    hooks:
+    - id: php-lint-all
+    name: PHP Syntax Check (Comprehensive)
+    description: Check PHP Syntax on ALL PHP staged files with user friendly messages and colors
+    entry: pre_commit_hooks/php-lint.sh
+    language: script
+    files: \.php$
+    args: [-s all]
+    - id: php-cbf
+    name: PHP Codesniffer (Code Beutifier and Formatter)
+    description: Run php codesniffer against all staged PHP files.
+    entry: pre_commit_hooks/php-cbf.sh
+    language: script
+    files: \.php$
+    - id: php-cs
+    name: PHP Codesniffer
+    description: Run php codesniffer against all staged PHP files.
+    #you can change the standard check from these anyone(PEAR, PSR1, PSR12, PSR2, Squiz, and Zend)
+    entry: pre_commit_hooks/php-cs.sh --standard=PEAR 
+    language: script
+    files: \.php$
+    - id: php-cs-fixer
+    name: PHP Coding Standards Fixer
+    description: Run php coding standards fixer against all staged PHP files.
+    entry: pre_commit_hooks/php-cs-fixer.sh
+    language: script
+    files: \.php$
+    - id: php-stan
+    name: PHPStan
+    description: Run PHPStan against all staged PHP files.
+    entry: pre_commit_hooks/php-stan.sh
+    language: script
+    files: \.php$
+                                
+                            </pre>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="line1_2_5">
+                        <div class="col-md-12" id="line2_2">
+                            <h4>Install the git hook scripts</h4>
+                            <p>Run the below command to set up the git hook scripts</p>
+                            <pre>$ pre-commit install</pre>
+                            <p>Now <code>pre-commit</code> will run automatically on <code>git commit</code>!</p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="line1_2_6">
+                        <div class="col-md-12" id="line2_2">
+                        <h4>Example</h4>
+                        
+
+                        <p>Let us take the below PHP code for example.</p>
+                        <pre class="brush: html;">
+
+
+
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class LoginRegisterController extends Controller
+{
+    public function pre_commit_demo()
+    {
+        return view('pre_commit_demo_view');
+    }
+
+    public function validate_form(Request $request)
+    {
+        $this->validate($request,
+            [
+            'firstname' => 'required|min:5|max:35',
+            'lastname' => 'required|min:5|max:35',
+            'email' => 'required|email|unique:users',
+            'mobileno' => 'required|numeric',
+            'password' => 'required|min:3|max:20',
+            'confirm_password' => 'required|min:3|max:20|same:password',
+            'details' => 'required'
+            ],
+            [
+            'firstname.required' => ' The first name field is required.',
+            'firstname.min' => ' The first name must be at least 5 characters.',
+            'firstname.max' => ' The first name may not be greater than 35 characters.',
+            'lastname.required' => ' The last name field is required.',
+            'lastname.min' => ' The last name must be at least 5 characters.',
+            'lastname.max' => ' The last name may not be greater than 35 characters.',
+            ]
+        );
+        dd('You are successfully added all fields.');
+    }
+}
+
+
+
+
+
+                            
+                    </pre>
+                    <p>Add and commit the file in the GIT. For the first commit, it will take some time to set up the environment. Please be patient until completing.</p>
+                    <pre>$ git add LoginRegisterController.php
+$ git commit LoginRegisterController.php -m "test pre commit tool"
+                    </pre>
+
+                    <p>The <code>pre-commit</code> tool will check the code and suggest errors/changes whenever the <code>git commit</code> command is executed. Some changes will be made automatically by the <code>pre-commit</code> tool. Here are errors/changes suggested by pre-commit for the above code</p>
+
+                    <img src="images/php_errors.png" alt="pre-commit error" class="img-responsive img-thumbnail">
+
+                    <p>After we have fixed all the issues suggested by the pre-commit tool, see the final code. It looks clean and beautiful !!!</p>
+
+                    <pre class="brush: html">
+/**
+ * PHP version 7.4
+ * Controller for Login and Register modules
+ *
+ * @category Controller_File
+ * @package  LoginRegisterController
+ * @author   Sheik Azarudeen &#60;sheik.azarudeen@galaxyweblinks.in&#62;
+ * @license  https://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     https://www.galaxyweblinks.com/ YOUR PROJECT URL
+ */
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+/**
+ * Render and validate the Login and Register form
+ *
+ * @category Controller_Class
+ * @package  LoginRegisterController
+ * @author   Sheik Azarudeen &#60;sheik.azarudeen@galaxyweblinks.in&#62;
+ * @license  https://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     https://www.galaxyweblinks.com/ YOUR PROJECT URL
+ */
+class LoginRegisterController extends Controller
+{
+    /**
+     * Render form template
+     *
+     * @return view
+     */
+    public function preCommitDemo()
+    {
+        return view('pre_commit_demo_view');
+    }
+
+    /**
+     * Define validation rules
+     *
+     * @param Request $request   Pass the http request header
+     * @param string  $page_from To identify the request made from which page
+     *
+     * @return bool
+     */
+    public function validateForm(Request $request, $page_from)
+    {
+        $this->validate(
+            $request,
+            [
+            'firstname' => 'required|min:5|max:35',
+            'lastname' => 'required|min:5|max:35',
+            'email' => 'required|email|unique:users',
+            'mobileno' => 'required|numeric',
+            'password' => 'required|min:3|max:20',
+            'confirm_password' => 'required|min:3|max:20|same:password',
+            'details' => 'required'
+            ],
+            [
+            'firstname.required' => ' The first name field is required.',
+            'firstname.min' => ' The first name must be at least 5 characters.',
+            'firstname.max' => ' The first name may not be greater than 
+            35 characters.',
+            'lastname.required' => ' The last name field is required.',
+            'lastname.min' => ' The last name must be at least 5 characters.',
+            'lastname.max' => ' The last name may not be greater than 
+            35 characters.',
+            ]
+        );
+        dd('You are successfully added all fields.');
+    }
+}
+                       
+                    </pre>
+                    </div>
+                </div>
+
+                <!-- end row -->
+                
+                    </section>
+
+                    <section class="welcome" id="line2">
+                        <h2 class="dark-text">Note<hr></h2>
                         <div class="intro2 clearfix">
                             <p><i class="fa fa-exclamation-triangle"></i> Before committing, the file should be staged. Because the <code>pre-commit</code> tool will look only at staged version files. If you want to skip the <code>git add</code> command, use the below command. But this command will stage & commit all modified and deleted files.
                             </p>
